@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julee & Priyank | April 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #fdfcf9; --gold: #c5a059; }
+        body { background-color: var(--bg); font-family: 'Montserrat', sans-serif; overflow: hidden; }
+        
+        /* ENVELOPE ANIMATION */
+        #envelope-wrapper {
+            position: fixed; inset: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: center;
+            background: #f4f1ea; transition: transform 1s ease-in-out;
+        }
+        .envelope {
+            width: 300px; height: 200px; background: #fff;
+            position: relative; cursor: pointer;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid #e0dcd0;
+        }
+        .seal {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 50px; height: 50px; background: var(--gold);
+            border-radius: 50%; box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+            display: flex; align-items: center; justify-content: center; color: white; font-serif;
+        }
+        .opened-envelope { transform: translateY(-100vh); }
+
+        /* SECTION VISIBILITY */
+        .page-section { display: none; min-height: 100vh; }
+        .active-section { display: block; animation: fadeIn 1s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .nav-link { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; color: #999; }
+        .nav-link.active { color: var(--gold); border-bottom: 1px solid var(--gold); }
+    </style>
+</head>
+<body>
+
+    <div id="envelope-wrapper" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="p-4 text-center mt-12 text-[10px] tracking-[0.3em] uppercase opacity-40">Inviting You To Celebrate</div>
+            <div class="seal">J&P</div>
+        </div>
+        <p class="absolute bottom-20 uppercase tracking-widest text-[10px] animate-pulse">Click to Open</p>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 py-6 px-10 flex justify-between bg-[#fdfcf9]/80 backdrop-blur-sm">
+        <div class="serif italic text-lg">J&P</div>
+        <div class="flex gap-6">
+            <span class="nav-link active" onclick="showSection('home', this)">Home</span>
+            <span class="nav-link" onclick="showSection('story', this)">Story</span>
+            <span class="nav-link" onclick="showSection('events', this)">Events</span>
+            <span class="nav-link" onclick="showSection('travel', this)">Travel</span>
+        </div>
+    </nav>
+
+    <main id="main-content" class="pt-24">
+        
+        <section id="home" class="page-section active-section text-center px-6 flex flex-col items-center justify-center">
+            <h1 class="text-6xl md:text-8xl serif italic mb-4 mt-20">Julee & Priyank</h1>
+            <p class="tracking-[0.4em] text-xs mb-8">APRIL 26, 2026 • VADODARA</p>
+            <div class="h-80 w-64 bg-stone-200 border-8 border-white shadow-xl mb-10 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+            </div>
+            <p class="serif italic max-w-md text-gray-500">"With God at the center of our hearts, we begin our journey together."</p>
+        </section>
+
+        <section id="story" class="page-section px-6 max-w-3xl mx-auto py-20">
+            <h2 class="serif text-5xl mb-12 italic text-center">Our Story</h2>
+            <p class="text-gray-500 leading-relaxed mb-10 text-center italic">What started as a connection through shared values grew into companionship and trust.</p>
+            <div class="grid grid-cols-1 gap-12">
+                <div class="border-l border-gold pl-6 py-4">
+                    <span class="text-[10px] uppercase tracking-widest text-gold mb-2 block">The Beginning</span>
+                    <p class="text-sm">Conversations and shared values formed our foundation.</p>
+                </div>
+                <div class="border-l border-gold pl-6 py-4">
+                    <span class="text-[10px] uppercase tracking-widest text-gold mb-2 block">The Proposal</span>
+                    <p class="text-sm">With blessings from our families, we decided on forever.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="page-section px-6 py-20 bg-[#f8f5f0]">
+             <h2 class="serif text-5xl mb-12 italic text-center">The Celebration</h2>
+             <div class="max-w-xl mx-auto space-y-12">
+                 <div class="flex justify-between border-b border-stone-200 pb-4">
+                     <div>
+                         <h4 class="font-bold text-sm uppercase">Mandap Ropan</h4>
+                         <p class="text-xs text-gray-400">April 25 • 03:30 PM</p>
+                     </div>
+                 </div>
+                 <div class="flex justify-between border-b border-stone-200 pb-4">
+                     <div>
+                         <h4 class="font-bold text-sm uppercase text-[#c5a059]">Wedding Ceremony</h4>
+                         <p class="text-xs text-gray-400">April 26 • 12:30 PM</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <section id="travel" class="page-section px-6 py-20 text-center">
+            <h2 class="serif text-5xl mb-12 italic">Travel & Venue</h2>
+            <p class="font-bold uppercase text-xs mb-2">Samay Lawns & Banquet Hall</p>
+            <p class="text-gray-400 text-sm mb-10">Vadodara, Gujarat</p>
+            <a href="https://maps.app.goo.gl/uR4pYyZ6U1qD1H8T9" target="_blank" class="border border-gold text-gold px-8 py-3 text-[10px] uppercase tracking-widest">Open in Google Maps</a>
+        </section>
+
+    </main>
+
+    <script>
+        function openEnvelope() {
+            document.getElementById('envelope-wrapper').classList.add('opened-envelope');
+            document.body.style.overflow = "auto";
+        }
+
+        function showSection(sectionId, element) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active-section'));
+            // Show target
+            document.getElementById(sectionId).classList.add('active-section');
+            
+            // Update Nav
+            document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Scroll to top of section
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
