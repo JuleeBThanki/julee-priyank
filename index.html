@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julee & Priyank | April 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #fdfcf9; --gold: #c5a059; --text: #2d2d2d; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; overflow: hidden; }
+        h1, h2, h3, .serif { font-family: 'Bodoni Moda', serif; }
+        
+        /* THE ENVELOPE OPENING EFFECT */
+        #envelope-container {
+            position: fixed; inset: 0; z-index: 999;
+            background: #f4f1ea; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        .envelope {
+            width: 320px; height: 220px; background: white;
+            position: relative; cursor: pointer;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            border: 1px solid #e0dcd0; display: flex; align-items: center; justify-content: center;
+        }
+        .seal {
+            width: 60px; height: 60px; background: var(--gold);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 18px; box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+        }
+        .envelope-open { transform: translateY(-100vh); }
+
+        /* NAVIGATION BAR */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(253, 252, 249, 0.9); backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        .nav-link { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
+        .nav-link:hover { color: var(--gold); }
+
+        /* SMOOTH SCROLLING SECTIONS */
+        section { min-height: 100vh; padding: 100px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* SPECIAL GOLD TEXT */
+        .gold-text { color: var(--gold); letter-spacing: 3px; }
+    </style>
+</head>
+<body>
+
+    <div id="envelope-container" onclick="unlockSite()">
+        <div class="envelope">
+            <div class="text-[10px] uppercase tracking-[0.4em] opacity-40 absolute top-12">Private Invitation</div>
+            <div class="seal serif italic">J&P</div>
+        </div>
+        <p class="mt-12 text-[10px] uppercase tracking-[0.3em] animate-pulse">Click to Reveal</p>
+    </div>
+
+    <nav class="flex justify-between items-center px-8 py-6">
+        <div class="serif italic text-xl">J&P</div>
+        <div class="hidden md:flex gap-10">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#story" class="nav-link">Our Story</a>
+            <a href="#events" class="nav-link">Events</a>
+            <a href="#venue" class="nav-link">Venue</a>
+            <a href="#hospitality" class="nav-link">Hospitality</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <p class="uppercase tracking-[0.5em] text-[10px] mb-6 gold-text">The Union of</p>
+        <h1 class="text-6xl md:text-9xl serif italic mb-6">Julee & Priyank</h1>
+        <div class="w-[1px] h-20 bg-[#c5a059] my-6"></div>
+        <p class="text-sm tracking-[0.2em] mb-12">26 APRIL 2026 • VADODARA, INDIA</p>
+        <p class="serif italic text-xl text-gray-400 max-w-lg">"With God at the center of our hearts, we begin our journey together."</p>
+    </section>
+
+    <section id="story" class="bg-[#f9f7f2]">
+        <div class="fade-in max-w-3xl">
+            <h2 class="serif text-5xl italic mb-12">Our Story</h2>
+            <p class="leading-loose text-gray-500 font-light italic mb-8">
+                "What started as a connection through shared values and conversations slowly grew into a deep sense of companionship and trust."
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="bg-stone-200 aspect-[3/4] border-8 border-white shadow-sm flex items-center justify-center text-[10px] tracking-widest text-gray-400">First Meeting</div>
+                <div class="bg-stone-200 aspect-[3/4] border-8 border-white shadow-sm flex items-center justify-center text-[10px] tracking-widest text-gray-400">Engagement</div>
+                <div class="bg-stone-200 aspect-[3/4] border-8 border-white shadow-sm flex items-center justify-center text-[10px] tracking-widest text-gray-400">Recent Photo</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events">
+        <div class="fade-in w-full max-w-4xl">
+            <h2 class="serif text-5xl italic mb-16">The Celebrations</h2>
+            
+            <div class="space-y-16">
+                <div class="flex flex-col md:flex-row justify-between items-center border-b border-stone-200 pb-8">
+                    <span class="gold-text text-xs font-bold uppercase">April 25 • 03:30 PM</span>
+                    <h3 class="serif text-3xl italic">Mandap Ropan</h3>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center border-b border-stone-200 pb-8">
+                    <span class="gold-text text-xs font-bold uppercase">April 25 • 06:00 PM</span>
+                    <h3 class="serif text-3xl italic">Sangeet</h3>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center border-b-2 border-[#c5a059] pb-8">
+                    <span class="gold-text text-xs font-bold uppercase underline">April 26 • 12:30 PM</span>
+                    <h3 class="serif text-4xl italic font-bold">The Wedding Ceremony</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="venue" class="bg-[#2d2d2d] text-white">
+        <div class="fade-in">
+            <h2 class="serif text-5xl italic mb-10 gold-text">The Venue</h2>
+            <p class="text-xl tracking-widest mb-2">SAMAY LAWNS & BANQUET HALL</p>
+            <p class="text-stone-400 text-sm mb-12">Sevasi – Kapurai Road, Vadodara, Gujarat</p>
+            <a href="https://maps.app.goo.gl/uR4pYyZ6U1qD1H8T9" target="_blank" class="border border-white px-10 py-4 text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition">Get Directions</a>
+        </div>
+    </section>
+
+    <section id="hospitality">
+        <div class="fade-in">
+            <h2 class="serif text-4xl italic mb-12">Wedding Hospitality</h2>
+            <p class="text-gray-500 mb-10 max-w-md mx-auto font-light">Accommodation has been arranged for our guests at the wedding venue for your comfort.</p>
+            <div class="flex flex-col md:flex-row gap-12 justify-center tracking-widest uppercase text-xs">
+                <div>
+                    <p class="opacity-40 mb-2">Hospitality</p>
+                    <p class="text-lg serif">+91 — — —</p>
+                </div>
+                <div>
+                    <p class="opacity-40 mb-2">Family</p>
+                    <p class="text-lg serif">+91 — — —</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-stone-100">
+        <h2 class="serif text-4xl italic mb-4">With Gratitude</h2>
+        <p class="serif text-2xl gold-text">Julee & Priyank</p>
+    </footer>
+
+    <script>
+        // Unlock site animation
+        function unlockSite() {
+            document.getElementById('envelope-container').classList.add('envelope-open');
+            document.body.style.overflow = "auto";
+        }
+
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
