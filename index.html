@@ -8,23 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfcf9;
-            --gold-accent: #c5a059;
-            --text-main: #2d2d2d;
+             --bg: #fdfcf9; --gold: #c5a059; 
+            //--bg-color: #fdfcf9;
+            //--gold-accent: #c5a059;
+            //--text-main: #2d2d2d;
         }
         body { 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
+           background-color: var(--bg); font-family: 'Montserrat', sans-serif; overflow: hidden;
+            //background-color: var(--bg-color); 
+           // color: var(--text-main); 
+           // font-family: 'Montserrat', sans-serif;
+           // overflow-x: hidden;
         }
         h1, h2, h3, .serif { font-family: 'Bodoni Moda', serif; font-weight: 400; }
         
-        /* Fade-in Animation */
+        //Fade-in Animation 
         .fade-in { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* Cinematic Hero */
+        //Cinematic Hero 
         .hero {
             height: 100vh;
             display: flex;
@@ -153,7 +155,7 @@
             <h2 class="serif text-4xl mb-6 italic">Venue</h2>
             <p class="uppercase tracking-widest text-xs mb-4">Samay Lawns & Banquet Hall</p>
             <p class="text-gray-500 font-light text-sm mb-8">Opp. Kapurai Cricket Ground, Sevasi – Kapurai Road<br>Vadodara, Gujarat</p>
-            <a href="#" class="btn-elegant">Google Maps</a>
+            <a href="https://maps.app.goo.gl/uR4pYyZ6U1qD1H8T9" class="btn-elegant">Google Maps</a>
         </div>
 
         <div class="grid md:grid-cols-2 gap-20 max-w-5xl mx-auto fade-in">
@@ -225,4 +227,5 @@
         updateTimer();
     </script>
 </body>
+
 </html>
